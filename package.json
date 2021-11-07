@@ -1,0 +1,15 @@
+{
+  "name": "alisha-backend-coding-practical",
+  "version": "1.0.0",
+  "description": "The goal of these exercises are to assess your proficiency in software engineering that is related to the daily work that we do at our organization.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "Thinkwik",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
