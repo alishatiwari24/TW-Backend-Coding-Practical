@@ -4,12 +4,12 @@ The goal of this practical is to assess your proficiency in software engineering
 
 ## Documentation
 
-Find the postman collection here: // TODO Publish collection and paste link here
+Find the postman collection here: https://www.getpostman.com/collections/e60917798b8e9fcbe441
 
 ## Guide
 
 - Add the contents of this folder to your own github profile. Name the repository as `TW-Backend-Coding-Practical`. First commit should be named as `Initial commit` and default branch should be `main` branch.
-- Follow the below tasks in the given order. 
+- Follow the below tasks in the given order.
 - Each task should be implemented on its own branch. Each task has a `TASK-00x` number assigned to it. This should be the branch name for peforming that task.
 - Once a task is completed, you should create a pull request for that branch against `main` branch. The title for pull request should be the description of the task. Merge the branch and close the pull request once task is done.
 - Mark the task as completed (change `[ ]` to `[x]`) before closing the pull request and merging the branch.
@@ -37,7 +37,7 @@ Find the postman collection here: // TODO Publish collection and paste link here
 #### TASK-002 - Connect to MongoDB via Mongoose
 
 - There is a stub function for connecting to mongodb but the logic is not implemented. Complete the function to connect to MongoDB.
-- The database name should be `gorides`. 
+- The database name should be `gorides`.
 - The database connection string should be read from environment (`.env`) file.
 
 #### TASK-003 - Move PORT to environment file
@@ -51,24 +51,26 @@ Find the postman collection here: // TODO Publish collection and paste link here
 
 ```json
 {
-    "start": {
-        "lat": 0,
-        "long": 0
-    },
-    "end": {
-        "lat": 0,
-        "long": 0
-    },
-    "driver": {
-        "name": "John Doe",
-        "vehicleNumber": "XXXXXXXXXX",
-        "vehicleType": "CAR" // Possible values: CAR, BIKE
-    },
-    "customers": [{
-        "name": "Jane Doe"
-    }],
-    "createdAt": "2021-01-01T00:00:00.000Z",
-    "updatedAt": "2021-01-01T00:00:00.000Z"
+  "start": {
+    "lat": 0,
+    "long": 0
+  },
+  "end": {
+    "lat": 0,
+    "long": 0
+  },
+  "driver": {
+    "name": "John Doe",
+    "vehicleNumber": "XXXXXXXXXX",
+    "vehicleType": "CAR" // Possible values: CAR, BIKE
+  },
+  "customers": [
+    {
+      "name": "Jane Doe"
+    }
+  ],
+  "createdAt": "2021-01-01T00:00:00.000Z",
+  "updatedAt": "2021-01-01T00:00:00.000Z"
 }
 ```
 
@@ -76,8 +78,8 @@ Find the postman collection here: // TODO Publish collection and paste link here
 
 - Add API to GET rides.
 - API should accept following parameters for pagination:
-    - `page` - Number (1, 2, 3, ...) - Should be a positive integer.
-    - `limit` - Number (1, 2, 3, ...) - Should be `0` or a positive integer. If passed as `0`, return all rides.
+  - `page` - Number (1, 2, 3, ...) - Should be a positive integer.
+  - `limit` - Number (1, 2, 3, ...) - Should be `0` or a positive integer. If passed as `0`, return all rides.
 - Test by inserting dummy data in database.
 - Document the API Request and Response.
 
