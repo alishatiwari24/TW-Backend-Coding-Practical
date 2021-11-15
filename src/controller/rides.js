@@ -14,7 +14,30 @@ class RidesController {
       .skip(docsToSkip)
       .sort("createdAt");
 
-    return res.status(200).send({ data: Rides });
+    return res.status(200).send({ isError: false, data: Rides });
+  };
+
+  /**
+   * It updates existing ride details
+   */
+  updateRide = async (req, res) => {
+    const rideId = req.params.id;
+    if (!rideId || (rideId && rideId.length !== 24)) {
+      return res
+        .status(400)
+        .send({ isError: true, message: "Please supply a valid ride-id" });
+    }
+    const rideExist = await Ride.findOne({ _id: rideId });
+    if (!rideExist) {
+      return res
+        .status(400)
+        .send({ isError: true, message: "Please supply a valid ride-id" });
+    }
+    await Ride.updateOne({ _id: rideId }, req.body);
+
+    return res
+      .status(200)
+      .send({ isError: false, message: "Ride updated successfully" });
   };
 }
 
